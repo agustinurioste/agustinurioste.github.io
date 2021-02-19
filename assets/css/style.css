@@ -10,6 +10,7 @@
 --------------------------------------------------------------*/
 html{
   scroll-behavior: smooth;
+  background-color: #000000;
 }
 #chill{
   width: 400px;
@@ -601,7 +602,9 @@ section img {
 --------------------------------------------------------------*/
 .foot{
  text-align: center;
+ color: white;
  font-weight: 500;
+ background-color: #000000;
 }
 #maskDiv{
   background-color: rgba(255, 255, 255, 0);
@@ -613,8 +616,9 @@ section img {
   margin-top: -5%;
 }
 .values{
-  background-color:rgba(255, 255, 255, 0);
+  background-color: #000000;
   z-index:996;
+  margin-bottom: -5%;
   
 }
 
@@ -627,6 +631,57 @@ section img {
   background-color: #202020;
   z-index: 9999;
 }
+
+.spinner{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -25px 0 0 -25px; 
+}
+
+/**===== circle5 =====*/
+#circle5 {
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: 50px;
+  width: 50px;
+  margin: -25px 0 0 -25px;
+  border: 4px rgba(0, 0, 0, 0.25) solid;
+  border-top: 4px #008744 solid;
+  border-right: 4px #0057e7 solid;
+  border-bottom: 4px #d62d20 solid;
+  border-radius: 50%;
+  -webkit-animation: spin5 1s infinite linear;
+          animation: spin5 1s infinite linear;
+}
+
+@-webkit-keyframes spin5 {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(359deg);
+            transform: rotate(359deg);
+  }
+}
+@keyframes spin5 {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(359deg);
+            transform: rotate(359deg);
+    -webkit-transform: rotate(359deg);
+            transform: rotate(359deg);
+  }
+}
+/** END of circle5 */
 
 .values .box {
   padding: 30px;
