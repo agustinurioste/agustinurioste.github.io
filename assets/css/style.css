@@ -605,6 +605,7 @@ section img {
  color: white;
  font-weight: 500;
  background-color: #000000;
+ padding-top: 2%;
 }
 #maskDiv{
   background-color: rgba(255, 255, 255, 0);
