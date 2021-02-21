@@ -19,7 +19,7 @@ html{
 #ret{
   border-radius: 50px;
   filter: drop-shadow(4px 4px 10px #0000002c);
-  background-color: #acacac;
+  background-color: #dddddd;
 }
 .anchor{
   position: relative;
@@ -547,7 +547,7 @@ section img {
 # About
 --------------------------------------------------------------*/
 .about .content {
-  background-color: #cccccc2f;
+  background-color: #0000002f;
   padding: 40px;
 }
 
@@ -555,14 +555,14 @@ section img {
   font-size: 34px;
   font-weight: 900;
   letter-spacing: -1px;
-  color: #000000;
+  color: #012970;
   
 }
 
 .about h2 {
   font-size: 22px;
   font-weight: 700;
-  color: #012970;
+  color: black;
 }
 
 .about p {
@@ -610,20 +610,35 @@ section img {
   #chill{
     margin-top: 10%;
   }
+
+  #show{
+    position: relative;
+    top: -450px;
+    margin-bottom: -900px;
+  }
+
+  .foot{
+    margin-top: 40px;
+  }
+
 }
 
-@media screen and (min-width: 320px) and (max-width: 767px) and (orientation: portrait) {
+/* @media screen and (min-width: 320px) and (max-width: 767px) and (orientation: portrait) {
   html {
     transform: rotate(-90deg);
     transform-origin: left top;
-    width: 100vh;
+    width: 80vh;
     height: 100vw;
     overflow-x: hidden;
     position: absolute;
-    top: 100%;
+    top: 90%;
     left: 0;
   }
-}
+  #show{
+    position: relative;
+    top: -450px;
+  }
+}*/
 /* Hide scrollbar for Chrome, Safari and Opera */
 ::-webkit-scrollbar {
   display: none;
@@ -666,7 +681,7 @@ section img {
   height: auto;
 }
 #change{
-  color: black;
+  color:black;
   font-weight: 500;
 }
 #change2{
@@ -700,7 +715,7 @@ section img {
   height: 50px;
   width: 50px;
   margin: -25px 0 0 -25px;
-  border: 4px rgba(0, 0, 0, 0.25) solid;
+  border: 4px rgb(255, 255, 255) solid;
   border-top: 4px #00969A solid;
   border-right: 4px #0C79CF solid;
   border-bottom: 4px #DF583F solid;
