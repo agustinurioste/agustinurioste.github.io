@@ -39,7 +39,10 @@ function showMe() {
        else
           e.style.display = 'block';
     location.href ="#values";
+    setTimeout(function(){ alert("Scroll down to advance through the exhibit!"); }, 1500);
+    screen.orientation.lock('landscape');
    }
+   
 
 </script>
 
@@ -100,7 +103,7 @@ function showMe() {
             </ul>
           </li>-->
           <li><a class="nav-link scrollto" href="https://westvirginia.libanswers.com/" target="_blank">Contact</a></li>
-          <li onclick="showMe()"><a class="getstarted scrollto">Start Exhibit</a></li>
+          <li onclick="showMe()"><a class="getstarted scrollto" id="push">Start Exhibit</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
@@ -114,8 +117,8 @@ function showMe() {
     <div class="container">
       <div class="row">
         <div class="col-lg-6 d-flex flex-column justify-content-center">
-          <h1 data-aos="fade-up">This is a subtitle to emphasize the main title of the page</h1>
-          <h2 data-aos="fade-up" data-aos-delay="400">This is context for whatever is on top of it</h2>
+          <h1 data-aos="fade-up">In celebration of Women's History Month (March 2021), </h1>
+          <h2 data-aos="fade-up" data-aos-delay="400">WVU Art in the Libraries presents an online exhibition of some notable women in West Virginia's history. Many of the photographs and information are courtesy of the West Virginia & Regional History Center.</h2>
           <div data-aos="fade-up" data-aos-delay="600">
             <div class="text-center text-lg-start">
               <a href="#about" class="btn-get-started scrollto d-inline-flex align-items-center justify-content-center align-self-center">
@@ -143,9 +146,9 @@ function showMe() {
           <div class="col-lg-6 d-flex flex-column justify-content-center" data-aos="fade-up" data-aos-delay="200">
             <div class="content" id= "ret">
               <h3>About the exhibit</h3>
-              <h2>This series of portraits of twenty notable West Virginia Women was originally on display in IN.EXclusive: An exhibit and event series dedicated to West Virginia Women, at Arts Monongahela in 2017.</h2>
+              <h2>This series of portraits of twenty notable West Virginia Women was originally on display in <i id="change">IN.EXclusive</i>: An exhibit and event series dedicated to West Virginia Women, at Arts Monongahela in 2017. <i id = "change2">(Click "Start Exhbit" in the menu to begin)</i></h2>
               <p>
-                Read more about the women and take the West Virginia Women's History Heritage Trail tour on theclio.com. 
+                Read more about the women and take the West Virginia Women's History Heritage Trail tour on <a href="https://www.theclio.com/tour/114" target="_blank">theclio.com.</a> 
                 The trail includes two dozen historical sites related to women's history throughout West Virginia. 
                 The trail was built as an educational resource and its creators selected these two dozen sites from many nominations and hope to create additional trails that reflect the history of the state.
               </p>
@@ -169,11 +172,11 @@ function showMe() {
     </div>
 
     <!-- ======= Values Section ======= -->
-    <div class= "anchor" id="anchor"></div>
+    
     <section id="values" class="values">
-
-     <div class="container" data-aos="fade-up" id="show" style="display: none;">       
-        <iframe id="yes"
+    
+     <div class="container" data-aos="fade-up" id="show" style="display: none;">    
+   <iframe id="yes"
         title="Inline Frame Example"
         width="1920"
         height="1080"
