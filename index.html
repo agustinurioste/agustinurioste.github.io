@@ -31,20 +31,52 @@
   <!-- Adobe Fonts -->
   <link rel="stylesheet" href="https://use.typekit.net/eja2jwy.css">
 <!-- Other -->
+<script   src="https://code.jquery.com/jquery-2.2.4.js"   integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="   crossorigin="anonymous"></script>
+
   <script>
 function showMe() {
+  
   var e = document.getElementById('show');
   if(e.style.display == 'none')
           e.style.display = 'block';
        else
           e.style.display = 'block';
     location.href ="#values";
-    setTimeout(function(){ alert("Scroll down to advance through the exhibit!"); }, 1500);
+    //setTimeout(function(){ alert("Scroll down to advance through the exhibit!"); }, 1500);
     screen.orientation.lock('landscape');
+    setTimeout(function(){ 
+    if(document.fullscreenElement||document.webkitFullscreenElement||document.mozFullScreenElement||document.msFullscreenElement) { //in fullscreen, so exit it
+              alert('exit fullscreen');
+              if(document.exitFullscreen) {
+                  document.exitFullscreen();
+              } else if(document.msExitFullscreen) {
+                  document.msExitFullscreen();
+              } else if(document.mozCancelFullScreen) {
+                  document.mozCancelFullScreen();
+              } else if(document.webkitExitFullscreen) {
+                  document.webkitExitFullscreen();
+              }
+          } else { //not fullscreen, so enter it
+              alert('enter fullscreen');
+              if(document.documentElement.requestFullscreen) {
+                  document.documentElement.requestFullscreen();
+              } else if(document.documentElement.webkitRequestFullscreen) {
+                  document.documentElement.webkitRequestFullscreen();
+              } else if(document.documentElement.mozRequestFullScreen) {
+                  document.documentElement.mozRequestFullScreen();
+              } else if(document.documentElement.msRequestFullscreen) {
+                  document.documentElement.msRequestFullscreen();
+              }
+          }
+          }, 3000);
    }
    
 
 </script>
+
+<script>
+  
+  </script>
 
   
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
@@ -58,7 +90,7 @@ function showMe() {
   ======================================================== -->
 </head>
 
-<body data-bs-spy="scroll" data-bs-target="#navbar" data-bs-offset="100">
+<body data-bs-spy="scroll" data-bs-target="#navbar" data-bs-offset="100" id="body">
 
   <div class = "spinner-wrapper">
     <div class="spinner">
@@ -104,7 +136,8 @@ function showMe() {
             </ul>
           </li>-->
           <li><a class="nav-link scrollto" href="https://westvirginia.libanswers.com/" target="_blank">Contact</a></li>
-          <li onclick="showMe()"><a class="getstarted scrollto" id="push">Start Exhibit</a></li>
+          <li onclick="openNav()"><a class="getstarted scrollto" id="push">Start Exhibit</a></li>
+          <!-- <li onclick="showMe()"><a class="getstarted scrollto" id="push">Start Exhibit</a></li> -->
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
@@ -136,7 +169,22 @@ function showMe() {
     </div>
 
   </section><!-- End Hero -->
+            <!-- The overlay -->
+            <div id="myNav" class="overlay">
 
+              <!-- Button to close the overlay navigation -->
+              <a href="javascript:void(0)" class="closebtn" onclick="closeNav()" id="down">scroll down &times; <br> to see exhibit</a>
+                       
+              <!-- Overlay content -->
+              <div class="overlay-c">
+                 <iframe id="yes" 
+                title="Inline Frame Example"
+                allow="fullscreen"
+                src="apple/apple.html">
+                
+            </iframe>
+              </div>
+            </div>
   <main id="main">
     <!-- ======= About Section ======= -->
     <section id="about" class="about">
@@ -147,6 +195,22 @@ function showMe() {
           <div class="col-lg-6 d-flex flex-column justify-content-center" data-aos="fade-up" data-aos-delay="200">
             <div class="content" id= "ret">
               <h3>About the exhibit</h3>
+
+
+
+  <script>
+  function openNav() {
+  document.getElementById("myNav").style.width = "100%";
+  document.getElementById("body").style.overflow="hidden";
+  }
+
+  function closeNav() {
+  document.getElementById("myNav").style.width = "0%";
+  document.getElementById("body").style.overflow="scroll";
+  }
+  </script>
+             
+              
               <h2>This series of portraits of twenty notable West Virginia Women was originally on display in IN.EXclusive: An exhibit and event series dedicated to West Virginia Women, at Arts Monongahela in 2017. <o id = "change2">(Click "Start Exhbit" in the menu to begin)</o></h2>
               <p>
                 Read more about the women and take the West Virginia Women's History Heritage Trail tour on <a href="https://www.theclio.com/tour/114" target="_blank">theclio.com.</a> 
@@ -177,11 +241,13 @@ function showMe() {
     <section id="values" class="values">
     
      <div class="container" data-aos="fade-up" id="show" style="display: none;">    
-   <iframe id="yes"
+   <iframe id="yes" 
         title="Inline Frame Example"
         width="1920"
         height="1080"
+        allow="fullscreen"
         src="apple/apple.html">
+        
     </iframe>
 
    
@@ -239,9 +305,11 @@ function showMe() {
   <!-- ======= Footer ======= -->
   
 <div class="foot">
+  <div class = "cui">
 <p>
   Made by Agustin Urioste (Interactive Design sophomore)
 </p>
+</div>
 </div>
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 </div>
@@ -260,6 +328,7 @@ function showMe() {
    <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/debug.addIndicators.min.js"></script>
 <script src="https://unpkg.com/@lottiefiles/lottie-interactivity@latest/dist/lottie-interactivity.min.js"></script>
+
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
 
